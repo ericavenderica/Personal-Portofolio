@@ -2,10 +2,6 @@
 
 Welcome to my personal portfolio website! This project showcases my skills, experience, and projects as a Full Stack Developer. It is designed to be clean, professional, and responsive.
 
-## 🚀 Live Demo
-
-[Link to your live demo here] (e.g., https://ericavenderica.github.io/portfolio)
-
 ## 🛠️ Tech Stack
 
 -   **HTML5**: Semantic structure.
