@@ -18,11 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //add scroll event listener for navbar styling
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-    });
+    
+    if (navbar) {
+        const updateNavbarState = () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('is-scrolled');
+            } else {
+                navbar.classList.remove('is-scrolled');
+            }
+        };
+
+        // Initial check
+        updateNavbarState();
+        
+        window.addEventListener('scroll', updateNavbarState, { passive: true });
+    }
 });
