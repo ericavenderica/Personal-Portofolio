@@ -302,26 +302,28 @@ a {
 
 
 .experience-details-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column for mobile */
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px; /* Limit max width */
+    margin: 30px auto 0; /* Center container */
 }
 
-.experience-containers-wrapper {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    flex-wrap: wrap;
+@media screen and (min-width: 768px) {
+    .experience-details-container {
+        grid-template-columns: 1fr 1fr; /* Force 2 columns on tablet/desktop for a clean 2x2 grid */
+    }
 }
 
 .experience-details-card {
-    flex: 1;
     background: var(--bg-card);
-    border-radius: 30px;
-    border: 1px solid var(--border-gray);
-    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    padding: 30px; /* Reduced padding for compact look */
     text-align: center;
-    min-width: 350px;
+    transition: all 0.3s ease;
+    height: 100%; /* Ensure equal height */
 }
 
 .experience-details-card h3 {
